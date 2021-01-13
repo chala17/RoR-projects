@@ -1,0 +1,17 @@
+<h1>New Post!</h1>
+
+<%= form_with model: @post do |form| %>
+  <div class='new-post-spacing'>
+    <%= form.label(:title, 'Title') %>
+    <br>
+    <%= form.text_field :title %>
+    <br>
+  </div>
+  <div class='new-post-spacing'>
+    <%= form.label(:body, 'Body') %>
+    <br>
+    <%= form.text_area :body, :rows=>'8', :cols=>'60' %>
+    <br>
+    <%= form.submit "Post" %>
+  </div>
+<% end %>

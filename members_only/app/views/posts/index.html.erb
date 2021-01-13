@@ -1,0 +1,17 @@
+<h1>MEMBERS ONLY</h1>
+
+<h2>Secrets</h2>
+
+<ul>
+  <% @posts.reverse.each do |post| %>
+    <li>
+      <div class='post-box'>
+        <p class='title'><%= post.title %></p>
+        <% if user_signed_in? %>
+          <p class='author'><%= "by #{User.find(post.user_id).username} on #{post.created_at.strftime("%m/%d/%Y")}"%></p>
+        <% end %>
+        <p><%= post.body %></p>
+      </div>
+    </li>
+  <% end %>
+</ul>

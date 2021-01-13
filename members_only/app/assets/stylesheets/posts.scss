@@ -1,0 +1,40 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style-type: none;
+  margin: 2px;
+  padding: 0px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.post-box {
+  width: 33%;
+  margin: auto;
+  padding: 10px;
+  border: solid black 2px;
+}
+
+.new-post-spacing {
+  margin: 4px;
+}
+
+.new-post-body {
+  width: 200px;
+  height: 50px;
+}
+
+.author {
+  font-size: small;
+  margin: 0;
+}

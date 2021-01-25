@@ -2,6 +2,7 @@
 
 <% @events.reverse.each do |event| %>
   <div class='index-events'>
+    <div class='created-at'><%= "Created #{event.created_at.strftime("%m/%d/%Y")}" %></div>
     <h2><%= event.title %></h2><br>
     <div><%= event.date.strftime("%m/%d/%Y") %></div><br>
     <div><%= event.description %></div><br>

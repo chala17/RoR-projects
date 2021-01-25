@@ -1,9 +1,9 @@
 <h1><%= @event.title %></h1><br>
-<h2><%= "By #{User.find(@event.creator_id).username}"%></h2><br>
+<h2><%= "By #{User.find(@event.creator_id).username.capitalize}"%></h2><br>
 
 <div class='show-event'><%= @event.description %></div>
 
-<%= button_to 'Attend Event!', %>
+<%= link_to 'Attend Event!', attend_event_path %>
 
 <h3>Event Attendees</h3>
 <% @event.attendees.each do |attendee| %>

@@ -3,7 +3,40 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .event-listing {
-  width: 33%;
+  width: 85%;
   margin: 20px auto;
   border: 5px solid black;
+  padding: 5px;
+}
+
+.show-container {
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+
+.created-events {
+  width: 50%;
+  border-left: 2px solid black;
+  border: 2px solid black;
+}
+
+.event-invites {
+  display: flex;
+  width: 50%;
+}
+
+.upcoming-events {
+  width: 50%;
+  border: 2px solid black;
+}
+
+.attended-events {
+  width: 50%;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.created-at {
+  position: absolute;
 }

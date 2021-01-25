@@ -1,11 +1,41 @@
-<h1><%= "#{@user.username}'s Events"%></h1>
+<h1><%= "#{@user.username.capitalize}'s Page"%></h1>
 
-<%= link_to 'New Event', new_event_path %>
-
-<% @user.created_events.each do |event| %>
-  <div class='event-listing'>
-    <h2><%= event.title %></h2><br>
-    <p><%= event.description %></p>
-    <%= link_to 'Go to Event', event_path(event.id) %>
-  </div>
+<% if @user.id == session[:current_user_id] %>
+  <%= link_to 'New Event', new_event_path %>
 <% end %>
+<div class='show-container'>
+  <div class='created-events'>
+    <h2><%= "#{@user.username.capitalize}'s Created Events" %></h2>
+    <% @user.created_events.each do |event| %>
+      <div class='event-listing'>
+        <h3><%= event.title %></h2><br>
+        <p><%= event.description %></p>
+        <p><%= event.date.strftime("%m/%d/%Y")%></p>
+        <%= link_to 'Go to Event', event_path(event.id) %>
+      </div>
+    <% end %>
+  </div>
+    <div class='event-invites'>
+      <div class='attended-events'>
+        <h2><%= "Events #{@user.username.capitalize}s Attended" %></h2>
+        <% @user.attended_events.past.each do |event| %>
+          <div class='event-listing'>
+            <h3><%= event.title %></h2><br>
+            <p><%= event.description %></p>
+            <p><%= event.date.strftime("%m/%d/%Y")%></p>
+            <%= link_to 'Go to Event', event_path(event.id) %>
+          </div>
+        <% end %>
+      </div>
+      <div class='upcoming-events'>
+        <h2><%= "#{@user.username.capitalize}'s Upcoming Events" %></h2>
+        <% @user.attended_events.upcoming.each do |event| %>
+          <div class='event-listing'>
+            <h3><%= event.title %></h2><br>
+            <p><%= event.description %></p>
+            <p><%= event.date.strftime("%m/%d/%Y")%></p>
+            <%= link_to 'Go to Event', event_path(event.id) %>
+          </div>
+        <% end %>
+      </div>
+</div>

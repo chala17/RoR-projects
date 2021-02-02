@@ -5,9 +5,16 @@ class FlightsController < ApplicationController
     @date_year = @flights.map{ |f| f.datetime.year }.uniq
     @date_month = @flights.map{ |f| f.datetime.month }.uniq
     @date_day = @flights.map{ |f| f.datetime.day }.uniq
+    if params["specs"]
+      @flight_date = Date.civil(specs_params[:dyear].to_i, specs_params[:dmonth].to_i, specs_params[:dday].to_i)
+      @available_flights = Flight.where(start_airport_id: specs_params[:from], finish_airport_id: specs_params[:to], datetime: @flight_date.all_day)
+    end
   end
 
   private
-  def flight_form_params
+  
+  def specs_params
+    params.require(:specs).permit(:from, :to, :passengers, :dyear, :dmonth, :dday)
+  end
 
 end

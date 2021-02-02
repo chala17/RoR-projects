@@ -2,3 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.flight-info-form form {
+  display: flex;
+  width: 95%;
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.flight-info-form div {
+  text-align: center;
+}
+
+.test {
+  text-align: center;
+}

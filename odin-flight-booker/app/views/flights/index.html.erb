@@ -36,7 +36,7 @@
         <%= form.collection_radio_buttons(:flight_choice, @available_flights, :id, :datetime) do |flight| %>
           <%= flight.label { flight.radio_button + " " + flight.text.strftime("%l:%M%p %m/%d/%Y") } %><br>
         <% end %>
-        <%= form.hidden_field(:passengers, value: @passengers)%>
+        <%= form.hidden_field(:passengers, value: @passengers) %>
         <%= form.submit "Book" %>
       <% end %>
   <% else %>

@@ -1,0 +1,20 @@
+<%= render "flight_display",  :flight => @booking.flight %>
+
+<table>
+  <tr>
+    <th>Passenger</th>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <% i = 1 %>
+  <% @booking.passengers.each do |passenger| %>
+    <tr>
+      <td><%= "#{i}" %></td>
+      <td><%= passenger.name %></td>
+      <td><%= passenger.email %></td>
+    </tr>
+    <% i += 1 %>
+  <% end %>
+</table>
+
+<%= button_to "Search more Flights", flights_path, method: :get %>

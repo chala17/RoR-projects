@@ -24,33 +24,23 @@
       <%= form.select('specs[dday]', @date_day) %>
     </div>
     <div>
-      <%= form.submit "Submit" %>
+      <%= form.submit "Search" %>
     </div>
   <% end %>
 </div>
 
 <% unless @available_flights.nil? %>
   <% if @available_flights.exists? %>
-    <ul><% @available_flights.each do |flight| %>
-      <li><%= "#{flight.from_airport.code} #{flight.to_airport.code} #{flight.datetime}" %></li>
-    <% end %>
-    </ul>
-  <% else %>
-    <div>No flights returned from this query!</div>
-  <% end %>
-<% end %>
-
-<% unless @available_flights.nil? %>
-  <% if @available_flights.exists? %>
-    <%= form_with(url: "/booking/new", method: "get") do |form| %>
+  <h2>Available Departure Times</h2>
+    <%= form_with(url: "/bookings/new", method: "get", local: true) do |form| %>
         <%= form.collection_radio_buttons(:flight_choice, @available_flights, :id, :datetime) do |flight| %>
-          <%= flight.label { flight.radio_button + " " + flight.text } %><br>
+          <%= flight.label { flight.radio_button + " " + flight.text.strftime("%l:%M%p %m/%d/%Y") } %><br>
         <% end %>
-        <%= form.hidden_field(:passengers, value: @available_flights[0][:passengers])%>
+        <%= form.hidden_field(:passengers, value: @passengers)%>
         <%= form.submit "Book" %>
       <% end %>
   <% else %>
-    <div>No flights returned from this query!</div>
+    <h2>No flights returned from this query!</h2>
   <% end %>
 <% end %>
 

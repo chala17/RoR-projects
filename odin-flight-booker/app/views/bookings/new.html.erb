@@ -1,0 +1,21 @@
+<h1>Confirm Booking with Passenger Information</h1>
+
+<p>The flight you chose is listed below<p>
+
+<table>
+  <tr>
+    <th>From</th>
+    <th>To</th>
+    <th>Depature Time</th>
+    <th>Arrival Time</th>
+    <th>Date</th>
+  </tr>
+  <tr>
+    <td><%= @flight.from_airport.code %></td>
+    <td><%= @flight.to_airport.code %></td>
+    <td><%= @flight.datetime.strftime("%l:%M%p") %></td>
+    <td><%= (@flight.datetime + @flight.flight_duration*60).strftime("%l:%M%p") %></td>
+    <td><%= @flight.datetime.strftime("%m/%d/%Y") %></td>
+  </tr>
+</table>
+

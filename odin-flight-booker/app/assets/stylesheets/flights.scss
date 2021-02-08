@@ -4,7 +4,7 @@
 
 .flight-info-form form {
   display: flex;
-  width: 95%;
+  width: 80%;
   margin: auto;
   justify-content: space-evenly;
   align-items: center;
@@ -16,4 +16,18 @@
 
 .test {
   text-align: center;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 48px;
+}
+
+.tagline {
+  position: relative;
+  text-align: right;
+  width: 70%;
+  bottom: 32px;
+  font-family: cursive;
+  font-style: oblique -8deg;
 }

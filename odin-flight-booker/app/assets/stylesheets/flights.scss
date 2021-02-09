@@ -8,9 +8,10 @@
   position: relative;
   top: 50px;
   margin: auto;
+  padding-bottom: 20px;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgba(50, 50, 50, .4);
+  background-color: rgba(50, 50, 50, .6);
   border: 2px solid rgba(50, 50, 50, .9);
   border-radius: 5px;
 }
@@ -41,7 +42,7 @@ h2 {
   font-weight: 900;
   border: 2px solid rgba(50, 50, 50, .9);
   border-radius: 10px;
-  background-color: rgba(50, 50, 50, .4);
+  background-color: rgba(50, 50, 50, .6);
   color: white;
 	-webkit-text-stroke: 1px gray;
 	text-shadow: 0px 2px 4px black;

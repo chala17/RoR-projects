@@ -16,7 +16,7 @@
  */
 
  body {
-   background: url("airplane_background2.jpg") no-repeat center center fixed;
+   background: url("airplane-background.jpeg") no-repeat center center fixed;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
@@ -32,4 +32,3 @@
    border: 1px solid gray;
    box-shadow: 2px 2px 5px gray;
  }
-

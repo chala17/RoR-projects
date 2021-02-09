@@ -32,16 +32,18 @@
 
 <% unless @available_flights.nil? %>
   <% if @available_flights.exists? %>
-  <h2>Available Departure Times</h2>
-    <%= form_with(url: "/bookings/new", method: "get", local: true) do |form| %>
+    <div class='flight-option-form'>
+      <h2>Available Departure Times</h2>
+      <%= form_with(url: "/bookings/new", method: "get", local: true) do |form| %>
         <%= form.collection_radio_buttons(:flight_choice, @available_flights, :id, :datetime) do |flight| %>
-          <%= flight.label { flight.radio_button + " " + flight.text.strftime("%l:%M%p %m/%d/%Y") } %><br>
+          <div class='result'><%= flight.label { flight.radio_button + " " + flight.text.strftime("%l:%M%p %m/%d/%Y") } %><br></div>
         <% end %>
         <%= form.hidden_field(:passengers, value: @passengers) %>
         <%= form.submit "Book" %>
       <% end %>
+    </div>
   <% else %>
-    <h2>No flights returned from this query!</h2>
+    <div class='flight-option-form'><h2>No flights returned from this query!</h2></div>
   <% end %>
 <% end %>
 

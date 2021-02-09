@@ -4,20 +4,24 @@
 
 <%= render "flight_display",  :flight => @flight %>
 
-<%= form_with(model: @booking, local: true) do |new_booking| %>
-  <%= new_booking.hidden_field(:flight_id, value: @flight.id) %>
-  <ul>
-  <% i=1 %>
-    <%= new_booking.fields_for :passengers do |passenger_form| %>
-      <li>
-        <%= "Passenger #{i}"%>
-        <%= passenger_form.label :name %>
-        <%= passenger_form.text_field :name %>
-        <%= passenger_form.label :email %>
-        <%= passenger_form.text_field :email %>
-      </li>
-      <% i += 1 %>
-    <% end %>
-  </ul>
-  <%= new_booking.submit "Book"%>
-<% end %>
+<div class='passenger-info'>
+  <%= form_with(model: @booking, local: true) do |new_booking| %>
+    <%= new_booking.hidden_field(:flight_id, value: @flight.id) %>
+    <ul>
+    <% i=1 %>
+      <%= new_booking.fields_for :passengers do |passenger_form| %>
+          <div class='new-passenger'>
+            <p><%= "Passenger #{i}"%></p>
+            <li>
+              <%= passenger_form.label :name %>
+              <%= passenger_form.text_field :name %>
+              <%= passenger_form.label :email %>
+              <%= passenger_form.text_field :email %>
+            </li>
+          </div>
+        <% i += 1 %>
+      <% end %>
+    </ul>
+    <div class='submit-button'><%= new_booking.submit "Book"%></div>
+  <% end %>
+</div>

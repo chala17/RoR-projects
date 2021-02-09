@@ -4,14 +4,47 @@
 
 .flight-info-form form {
   display: flex;
-  width: 80%;
+  width: 90%;
+  position: relative;
+  top: 50px;
   margin: auto;
   justify-content: space-evenly;
   align-items: center;
+  background-color: rgba(50, 50, 50, .4);
+  border: 2px solid rgba(50, 50, 50, .9);
+  border-radius: 5px;
+}
+
+h2 {
+  color: white;
+	-webkit-text-stroke: 1px gray;
+	text-shadow: 0px 2px 4px black;
 }
 
 .flight-info-form div {
   text-align: center;
+}
+
+.flight-option-form {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  top: 100px;
+  
+}
+
+.flight-option-form .result {
+  padding: 5px;
+  width: 50%;
+  margin: 2px auto;
+  font-size: x-large;
+  font-weight: 900;
+  border: 2px solid rgba(50, 50, 50, .9);
+  border-radius: 10px;
+  background-color: rgba(50, 50, 50, .4);
+  color: white;
+	-webkit-text-stroke: 1px gray;
+	text-shadow: 0px 2px 4px black;
 }
 
 .test {
@@ -30,4 +63,7 @@
   bottom: 32px;
   font-family: cursive;
   font-style: oblique -8deg;
+  color: white;
+	-webkit-text-stroke: 1px gray;
+	text-shadow: 0px 2px 4px black;
 }

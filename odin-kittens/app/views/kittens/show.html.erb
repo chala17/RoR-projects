@@ -1,0 +1,29 @@
+<h1>WE TRACKED DOWN ONE IN PARTICULAR FOR YA</h1>
+
+<h2>I hope it was <%= @kitten.name %> you were looking for.</h2>
+<%= link_to 'Edit Cat', edit_kitten_path(@kitten.id) %>
+
+<h3>AGE</h3>
+<p>No papers on this little rat wrangler, but I reckon it's right around <%= @kitten.age %> years old judging by the length of the gnashers.</p>
+
+<h3>CUTENESS</h3>
+<% if @kitten.cuteness > 5 %>
+  <p>What an absolute beaut. Gotta give it a cuteness rating of <%= @kitten.cuteness %>.</p>
+<% else %>
+  <p>They keep insisting that this is a cat, but I don't know, looks more like a mole rat, or one of those opossum to me.
+    Anyway, I give it a cuteness rating of <%= @kitten.cuteness %>.</p>
+<% end %>
+
+<h3>SOFTNESS</h3>
+<% if @kitten.softness > 5 %>
+  <p>This musta been an indoor cat, looks like it's got a softness rating of <%= @kitten.softness %>.</p>
+<% else %>
+  <p>Mangy little fella, softness rating is barely a <%= @kitten.softness %>.</p>
+<% end %>
+
+<br>
+
+<div>
+  <p>You want to..... maybe..... get rid of this one....?</p>
+  <%= link_to 'Delete Kitten', kitten_path(@kitten.id), method: :delete %>
+</div>

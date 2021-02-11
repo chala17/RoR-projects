@@ -1,0 +1,12 @@
+<h1>EDIT CAT</h1>
+<h2>Looks like we might have had a bit of a mix-up with the paperwork. Real wolf in cats clothing if ya know what I mean.</h2>
+
+<div>
+  <p>Go ahead and put in the new info here</p>
+  <%= render 'kittens_form', :kitten => @kitten %>
+</div>
+
+<div>
+  <p>Or maybe this little piggy just..... disappears entirely....</p>
+  <%= link_to 'Delete Kitten', kitten_path(@kitten.id), method: :delete %>
+</div>

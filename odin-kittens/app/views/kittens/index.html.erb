@@ -1,0 +1,11 @@
+<h1>HERES ALL THOSE CATS YOU WERE LOOKING FOR</h1>
+
+<div>
+  <% @kittens.each do |kitten| %>
+    <ul><%= link_to kitten.name, kitten_path(kitten.id) %> <%= link_to 'Delete Kitten', kitten_path(kitten.id), method: :delete %>
+      <li>Age: <%= kitten.age %></li>
+      <li>Softness: <%= kitten.softness %></li>
+      <li>Cuteness: <%= kitten.cuteness %></li>
+    </ul>
+  <% end %>
+</div>

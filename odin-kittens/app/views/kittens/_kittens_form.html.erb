@@ -1,0 +1,13 @@
+<div>
+  <%= form_with model: kitten, local: true do |kitten| %>
+    <%= kitten.label :name %>
+    <%= kitten.text_field :name %>
+    <%= kitten.label :age %>
+    <%= kitten.text_field :age %>
+    <%= kitten.label :cuteness %>
+    <%= kitten.text_field :cuteness %>
+    <%= kitten.label :softness %>
+    <%= kitten.text_field :softness %>
+    <%= kitten.submit "Submit" %>
+  <% end %>
+</div>

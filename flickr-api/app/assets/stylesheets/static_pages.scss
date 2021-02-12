@@ -1,0 +1,38 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.photo-grid {
+  background-color: beige;
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-flow: row;
+  margin-top: 25px;
+}
+
+.photo {
+  align-self: center;
+  justify-self: center;
+}
+
+.user-id-form {
+  display: flex;
+  text-align: center;
+  height: 150px;
+  width: 100%;
+  background-color: #cc9767;
+}
+
+.user-id-form div {
+  margin: auto;
+}
+
+input[type="text"], textarea {
+  background-color: beige;
+  padding: 5px;
+  border-radius: 20px;
+  text-align: center;
+}

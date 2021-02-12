@@ -1,0 +1,15 @@
+<%= render 'static_form' %>
+
+<% if @photos %>
+  <% if @photos[0].nil? %>
+    <p>The provided User has no photos</p>
+  <% else %>
+    <div class='photo-grid'>
+      <% @photos.each do |photo| %>
+        <div class='photo'>
+          <img src="<%=Flickr.url_n(photo)%>"/>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

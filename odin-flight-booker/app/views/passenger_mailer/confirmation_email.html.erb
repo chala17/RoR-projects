@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello, <%= @passenger.name %></h1>
+    <p>
+      You have successfully booked your flight through First Class Flights.<br>
+    </p>
+    <p>
+      You are set to leave out of <%= @flight.from_airport.code %> at <%= @flight.datetime.strftime("%l:%M%p") %> on
+      <%= @flight.datetime.strftime("%m/%d/%Y") %> and arrive at <%= @flight.to_airport.code %> at 
+      <%= (@flight.datetime + @flight.flight_duration * 60).strftime("%l:%M%p") %> on <%= @flight.datetime.strftime("%m/%d/%Y") %>.<br>
+    </p>
+    <p>Thanks for using First Class Flights and have a great day!</p>
+  </body>
+</html>

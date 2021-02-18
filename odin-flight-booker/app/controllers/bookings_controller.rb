@@ -13,7 +13,11 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     if @booking.save
-      redirect_to booking_path(@booking.id), notice: "Your booking has been saved! Safe travels!"
+      #Tell the PassengerMailer to send a confirmation email after save
+      @booking.passengers.each do |passenger|
+        PassengerMailer.with(passenger: passenger, flight: @booking.flight).confirmation_email.deliver_later
+      end
+      redirect_to booking_path(@booking.id), notice: "Your booking has been saved! Check your email for confirmation! Safe travels!"
     else
       @flight = Flight.find(booking_params[:flight_id])
       flash.now[:alert] = 'No fields can be left blank!'

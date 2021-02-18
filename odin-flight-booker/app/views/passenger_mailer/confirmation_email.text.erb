@@ -1,0 +1,9 @@
+Hello, <%= @passenger.name %>
+
+You have successfully booked your flight through First Class Flights.
+
+You are set to leave out of <%= @flight.from_airport.code %> at <%= @flight.datetime.strftime("%l:%M%p") %> on
+<%= @flight.datetime.strftime("%m/%d/%Y") %> and arrive at <%= @flight.to_airport.code %> at 
+<%= (@flight.datetime + @flight.flight_duration * 60).strftime("%l:%M%p") %> on <%= @flight.datetime.strftime("%m/%d/%Y") %>.
+
+Thanks for using First Class Flights and have a great day!
